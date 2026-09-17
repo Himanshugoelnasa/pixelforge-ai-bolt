@@ -115,7 +115,7 @@ export default function Generator() {
       setProgress(100);
       setGenerating(false);
       setResults(RESULT_IMAGES.slice(0, count));
-      setCredits(c => c - totalCredits);
+      setCredits(credits - totalCredits);
       showToast(`${count} images generated successfully!`);
     }, 8000);
   };

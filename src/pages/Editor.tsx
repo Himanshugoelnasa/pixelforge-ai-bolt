@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import { Crop, RotateCcw, Flip2, Brush, Eraser, Wand2, Type, Sliders, Layers, History, ChevronDown, Upload, Download, Undo2, Redo2 } from 'lucide-react';
+import { Crop, RotateCcw, FlipHorizontal, Brush, Eraser, Wand2, Type, Sliders, Layers, History, ChevronDown, Upload, Download, Undo2, Redo2 } from 'lucide-react';
 import { useApp } from '@/contexts/AppContext';
 
 const TOOLS = [
   { id: 'crop', icon: Crop, label: 'Crop' },
   { id: 'rotate', icon: RotateCcw, label: 'Rotate' },
-  { id: 'flip', icon: Flip2, label: 'Flip' },
+  { id: 'flip', icon: FlipHorizontal, label: 'Flip' },
   { id: 'brush', icon: Brush, label: 'Brush' },
   { id: 'eraser', icon: Eraser, label: 'Eraser' },
   { id: 'inpaint', icon: Wand2, label: 'Inpaint' },

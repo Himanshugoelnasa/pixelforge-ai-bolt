@@ -1,13 +1,13 @@
 import { BarChart3, TrendingUp, Images, Zap, HardDrive, CheckCircle } from 'lucide-react';
 import { USAGE_STATS } from '@/lib/mockData';
 
-const BarChart = ({ data, key1, color }: { data: Record<string, number>[]; key1: string; color: string }) => {
-  const max = Math.max(...data.map(d => d[key1] || 0));
+const BarChart = ({ data, key1, color }: { data: Record<string, string | number>[]; key1: string; color: string }) => {
+  const max = Math.max(...data.map(d => Number(d[key1] || 0)));
   return (
     <div className="flex items-end gap-3 h-32 mt-4">
       {data.map((d, i) => {
-        const label = d.month || d.day || `${i}`;
-        const val = d[key1] || 0;
+        const label = String(d.month || d.day || i);
+        const val = Number(d[key1] || 0);
         return (
           <div key={label} className="flex-1 flex flex-col items-center gap-2">
             <div className="w-full rounded-t-md" style={{ height: `${(val / max) * 100}px`, background: color }} title={`${val}`} />
